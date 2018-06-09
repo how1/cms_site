@@ -11,15 +11,14 @@
 
             <!-- Blog Entries Column -->
             <div class="col-md-8">
-<h1 class="page-header">
-                    Page Heading
-                    <small>Secondary Text</small>
-                </h1>
                 
                  <?php  
                 if (isset($_POST['submit'])){
-                    $result = mysqli_real_escape_string( $_POST['search']);
+                    $result = mysqli_real_escape_string($connection, $_POST['search']);
                     
+                    echo "<h1 class='page-header'>
+                    Results for \"$result\"</h1>";
+                        
                     $query = "SELECT * FROM posts WHERE post_tags LIKE '%$result%' ";
                     
                     $search_query = mysqli_query($connection, $query);
