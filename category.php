@@ -11,10 +11,6 @@
 
             <!-- Blog Entries Column -->
             <div class="col-md-8">
-<h1 class="page-header">
-                    Page Heading
-                    <small>Secondary Text</small>
-                </h1>
                <?php 
                
                 
@@ -26,6 +22,15 @@
                 
                 $query = "SELECT * FROM posts WHERE post_category_id = $post_cat ";
                 $select_all_posts_query = mysqli_query($connection, $query);
+                
+                $cat_title_query = "SELECT * FROM categories WHERE cat_id = '{$post_cat}' ";
+                $get_title = mysqli_query($connection, $cat_title_query);
+                $cat_title_row = mysqli_fetch_assoc($get_title);
+                $cat_title = $cat_title_row['cat_title'];
+                
+                echo "<h1 class='page-header'>
+                    $cat_title
+                </h1>";
                 
                 while($row =   mysqli_fetch_assoc($select_all_posts_query)){
                 $postTitle = $row['post_title'];

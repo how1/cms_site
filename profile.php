@@ -53,6 +53,17 @@
     
 //    move_uploaded_file($image_temp, "../images/$image");
     
+    $query = "SELECT randSalt FROM users";
+    $select_randsalt_query = mysqli_query($connection, $query);
+
+    if (!$select_randsalt_query){
+        die("Query failed " . mysqli_error($connection));
+    }
+
+    $row = mysqli_fetch_assoc($select_randsalt_query);
+    $salt = $row['randSalt'];
+    $user_password = crypt($user_password, $salt);    
+        
     
     $query = "UPDATE users SET ";
     $query .= "user_firstname = '{$user_firstname}', ";
