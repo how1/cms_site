@@ -20,7 +20,7 @@
                     
                     while($row = mysqli_fetch_assoc($select_all_categories_query)){
                        $catTitle =  $row['cat_title'];
-                        echo "<li><a href='#'>{$catTitle}</a></li>";
+                        echo "<li><a href=''category.php?category=$catId'>{$catTitle}'>{$catTitle}</a></li>";
                     }
                     session_start();
                     if (isset($_SESSION['username'])){
