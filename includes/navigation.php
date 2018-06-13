@@ -13,7 +13,6 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                   <li><a href='capstone_page.php'>Capstone</a></li>;
                    <?php 
                     $query = "SELECT * FROM categories";
                     $select_all_categories_query = mysqli_query($connection, $query);
@@ -23,6 +22,9 @@
                         $catId = $row['cat_id'];
                         echo "<li><a href='category.php?category=$catId'>{$catTitle}</a></li>";
                     }
+                    ?>
+                    <li><a href='capstone_page.php'>Capstone</a></li>;
+                    <?php
                     session_start();
                     if (isset($_SESSION['username'])){
                         $username = $_SESSION['username'];
