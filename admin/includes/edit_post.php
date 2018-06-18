@@ -30,7 +30,7 @@ if (isset($_POST['update_post'])){
     $image_temp =  escape($_FILES['image']['tmp_name']);
     
     $tags = escape($_POST['post_tags']);
-    $content =  escape($_POST['post_content']);
+    $content =  $_POST['post_content'];
     
     move_uploaded_file($image_temp, "../images/$image");
     
