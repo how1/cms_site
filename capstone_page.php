@@ -10,16 +10,7 @@ include "includes/navigation.php";
 include "capstone.html";
 ?>
 
-  <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-<!--                    <p>Copyright &copy; Henry Owen 2018</p>-->
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-        </footer>
+        
 
     </div>
     <!-- /.container -->
