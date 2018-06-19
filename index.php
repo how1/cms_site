@@ -65,7 +65,7 @@
                 <div style="width:150">
                 <img class="img-responsive" style="width:100%" src="images/<?php echo $postImage;?> " alt=""></div></a>
                 <hr>
-                <p><?php echo $postContent;?></p>
+                <p><?php echo $postContent . " . . .";?></p>
                 <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id;?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                 <hr>       
