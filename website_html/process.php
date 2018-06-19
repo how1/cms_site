@@ -3,7 +3,7 @@
     $name = $_GET['name'];
     $email = $_GET['email'];
     $subject = $_GET['subject'];
-    $headers = "From: me@asdf.com"
+    $headers = "From: me@asdf.com";
     mail($to, $subject, $message, $headers);
     
 } ?>

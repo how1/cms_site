@@ -26,7 +26,7 @@
        
        <h1 class="page-heading">Contact</h1>
        <div id="form">
-           <form action="process.php">
+           <form action="process.php" method="post">
               <p>
                <label for="name">Name:</label>
                <input type="text" name="name" placeholder=" Your Name">
@@ -39,7 +39,7 @@
                </p>
                <p>    
                <textarea name="message" id="content" cols="30" rows="10"></textarea>
-               <input type="button" name="submit" value="Send Message" id="submit" required>
+               <input type="submit" name="submit" value="Send Message" id="submit" required>
                </p>
            </form>
        </div>
