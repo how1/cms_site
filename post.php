@@ -75,12 +75,13 @@
           if (!$comment_query){
                 die("query failed " . mysqli_error($connection));
           }
+          mail("hnryown@gmail.com", "Comment Approval Needed", "Comment approval needed at henrywowen.com", "From: me@henrywowen.com");
           
           $query = "UPDATE posts SET post_comment_count = post_comment_count + 1 WHERE post_id = $post_id";
           $increment_com_count = mysqli_query($connection, $query);
         if (!$increment_com_count){
                 die("query failed " . mysqli_error($connection));
-          }
+        }
           
       }
             ?>
