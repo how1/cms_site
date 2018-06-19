@@ -1,10 +1,12 @@
-<?php  if (isset($_GET['submit'])){
+<?php  
+if (isset($_POST['submit'])){
     $to = "hnryown@gmail.com";
-    $name = $_GET['name'];
-    $email = $_GET['email'];
-    $subject = $_GET['subject'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
     echo $subject;
-    $headers = "From: me@asdf.com" . "\r\n" . "CC: somebodyelse@example.com";
+    $headers = "From: me@asdf.com";
     mail($to, $subject, $message, $headers);
     
-} ?>
+}
+?>
