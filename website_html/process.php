@@ -3,7 +3,8 @@
     $name = $_GET['name'];
     $email = $_GET['email'];
     $subject = $_GET['subject'];
-    $headers = "From: me@asdf.com";
+    echo $subject;
+    $headers = "From: me@asdf.com" . "\r\n" . "CC: somebodyelse@example.com";
     mail($to, $subject, $message, $headers);
     
 } ?>
