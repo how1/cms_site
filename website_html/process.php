@@ -7,7 +7,9 @@ if (isset($_POST['submit'])){
     $message = $_POST['message'];
     echo $subject;
     $headers = "From: me@asdf.com";
-    mail($to, $subject, $message, $headers);
-    
+    $sent = mail($to, $subject, $message, $headers);
+    if (!$sent){
+        echo "not sent";
+    }
 }
 ?>
