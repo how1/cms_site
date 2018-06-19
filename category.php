@@ -20,18 +20,42 @@
                     
                 }
                 
-                $query = "SELECT * FROM posts WHERE post_category_id = $post_cat ";
-                $select_all_posts_query = mysqli_query($connection, $query);
-                
                 $cat_title_query = "SELECT * FROM categories WHERE cat_id = '{$post_cat}' ";
                 $get_title = mysqli_query($connection, $cat_title_query);
                 $cat_title_row = mysqli_fetch_assoc($get_title);
                 $cat_title = $cat_title_row['cat_title'];
                 
                 echo "<h1 class='page-header'>
-                    $cat_title
-                </h1>";
-                
+                    $cat_title";
+                ?>
+                <small class='dropdown'>
+                    <a href='#' class='dropdown-toggle' data-toggle='dropdown'><i class='fa fa-user'></i> Sort By <b class='caret'></b></a>
+                    <ul class='dropdown-menu'>
+                        <li>
+                            <a href='category.php?sort=newest&category=<?php echo $post_cat;?>'><i class='fa fa-fw fa-user'></i> Newest</a>
+                        </li>
+                        
+                        <li>
+                            <a href='category.php?sort=oldest&category=<?php echo $post_cat;?>'><i class='fa fa-fw fa-power-off'></i> Oldest</a>
+                        </li>
+                    </ul>
+                </small>
+                </h1>
+                <?php
+                if (isset($_GET['sort'])){
+                    $sort = $_GET['sort'];
+                   if ($sort == 'oldest'){
+                        $query = "SELECT * FROM posts WHERE post_category_id = $post_cat ORDER BY post_date ASC";
+                   } else {
+                        $query = "SELECT * FROM posts WHERE post_category_id = $post_cat ORDER BY post_date DESC";
+                   }
+               } else {
+                    $query = "SELECT * FROM posts WHERE post_category_id = $post_cat ORDER BY post_date DESC";
+               }
+                $select_all_posts_query = mysqli_query($connection, $query);
+                if (!$select_all_posts_query){
+                    die("Query failed: " . mysqli_error($connection));
+                }
                 while($row =   mysqli_fetch_assoc($select_all_posts_query)){
                 $postTitle = $row['post_title'];
                 $post_id = $row['post_id'];
