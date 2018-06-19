@@ -13,26 +13,31 @@ if (isset($_POST['submit'])){
         $username = mysqli_real_escape_string($connection, $username);
         $password = mysqli_real_escape_string($connection, $password);
         $email = mysqli_real_escape_string($connection, $email);
+        $check_unique_username = "SELECT * FROM users WHERE username = '{$username}'";
+        $unique = mysqli_query($connection, $check_unique_username);
+        if (mysqli_num_rows($unique) != 0){
+            $message = "Username must be unique";
+        } else {
+            $query = "SELECT randSalt FROM users";
+            $select_randsalt_query = mysqli_query($connection, $query);
 
-        $query = "SELECT randSalt FROM users";
-        $select_randsalt_query = mysqli_query($connection, $query);
+            if (!$select_randsalt_query){
+                die("Query failed " . mysqli_error($connection));
+            }
 
-        if (!$select_randsalt_query){
-            die("Query failed " . mysqli_error($connection));
+            $row = mysqli_fetch_assoc($select_randsalt_query);
+            $salt = $row['randSalt'];
+            $password = crypt($password, $salt);
+
+
+            $query = "INSERT INTO users (username, user_email, user_password, user_role) ";
+            $query .= "VALUES('{$username}', '{$email}', '{$password}', 'subscriber')";
+            $register_user_query = mysqli_query($connection, $query);
+            if (!$register_user_query){
+                die("Query failed: " . mysqli_error($connection));
+            }
+            $message = "Your registration has been submitted";
         }
-        
-        $row = mysqli_fetch_assoc($select_randsalt_query);
-        $salt = $row['randSalt'];
-        $password = crypt($password, $salt);
-        
-        
-        $query = "INSERT INTO users (username, user_email, user_password, user_role) ";
-        $query .= "VALUES('{$username}', '{$email}', '{$password}', 'subscriber')";
-        $register_user_query = mysqli_query($connection, $query);
-        if (!$register_user_query){
-            die("Query failed: " . mysqli_error($connection));
-        }
-        $message = "Your registration has been submitted";
     } else{
         $message = "Fields cannot be empty";
     }
