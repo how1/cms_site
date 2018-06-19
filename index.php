@@ -13,11 +13,31 @@
             <div class="col-md-8">
 <h1 class="page-header">
                     All Posts
-<!--                <small>Secondary Text</small>-->
+                <small class='dropdown'>
+                    <a href='#' class='dropdown-toggle' data-toggle='dropdown'><i class='fa fa-user'></i> Sort By <b class='caret'></b></a>
+                    <ul class='dropdown-menu'>
+                        <li>
+                            <a href='index.php?sort=newest'><i class='fa fa-fw fa-user'></i> Newest</a>
+                        </li>
+                        
+                        <li>
+                            <a href='index.php?sort=oldest'><i class='fa fa-fw fa-power-off'></i> Oldest</a>
+                        </li>
+                    </ul>
+                </small>
                 </h1>
                <?php 
-               
-                $query = "SELECT * FROM posts ";
+               if (isset($_GET['sort'])){
+                   $sort = $_GET['sort'];
+                   if ($sort == 'oldest'){
+                        $query = "SELECT * FROM posts ORDER BY post_date ASC";
+                   } else {
+                        $query = "SELECT * FROM posts ORDER BY post_date DESC";
+                   }
+               } else {
+                     $query = "SELECT * FROM posts ORDER BY post_date DESC";
+               }
+              
                 $select_all_posts_query = mysqli_query($connection, $query);
                 $post_count = 0;
                 while($row =   mysqli_fetch_assoc($select_all_posts_query)){
