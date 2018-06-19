@@ -45,12 +45,12 @@
                 if (isset($_GET['sort'])){
                     $sort = $_GET['sort'];
                    if ($sort == 'oldest'){
-                        $query = "SELECT * FROM posts WHERE post_category_id = $post_cat ORDER BY post_date ASC";
+                        $query = "SELECT * FROM posts WHERE post_category_id = $post_cat AND post_status = 'published' ORDER BY post_date ASC";
                    } else {
-                        $query = "SELECT * FROM posts WHERE post_category_id = $post_cat ORDER BY post_date DESC";
+                        $query = "SELECT * FROM posts WHERE post_category_id = $post_cat AND post_status = 'published' ORDER BY post_date DESC";
                    }
                } else {
-                    $query = "SELECT * FROM posts WHERE post_category_id = $post_cat ORDER BY post_date DESC";
+                    $query = "SELECT * FROM posts WHERE post_category_id = $post_cat AND post_status = 'published' ORDER BY post_date DESC";
                }
                 $select_all_posts_query = mysqli_query($connection, $query);
                 if (!$select_all_posts_query){
