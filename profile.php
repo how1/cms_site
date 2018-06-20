@@ -42,8 +42,8 @@
     $user_lastname = $_POST['user_lastname'];
     $user_role = $_SESSION['user_role'];
     
-//    $image = $_FILES['image']['name'];
-//    $image_temp = $_FILES['image']['tmp_name'];
+    $image = $_FILES['image']['name'];
+    $image_temp = $_FILES['image']['tmp_name'];
     
     $username = $_POST['username'];
     $user_email = $_POST['user_email'];
@@ -51,7 +51,7 @@
 //    $date = date('d-m-y');
 //    $post_comment_count = 4;
     
-//    move_uploaded_file($image_temp, "../images/$image");
+    move_uploaded_file($image_temp, "user_images/$image");
     
     $query = "SELECT randSalt FROM users";
     $select_randsalt_query = mysqli_query($connection, $query);
@@ -71,6 +71,7 @@
     $query .= "user_role = '{$user_role}', ";
     $query .= "username = '{$username}', ";
     $query .= "user_email = '{$user_email}', ";
+    $query .= "user_image = '{$image}', ";
     $query .= "user_password = '{$user_password}' ";
     $query .= "WHERE username = '{$username}' ";
     
@@ -121,7 +122,10 @@
         <label for="post_tags">Password</label>
         <input type="password" value="<?php echo $user_password; ?>" class="form-control" name="user_password">
     </div>
-       
+    <div class="form-group">
+        <label for="post_image">User Image</label>
+        <input type="file" name="image">
+    </div>
     <div class="form-group">
         <label for=""></label>
         <input type="submit" class="btn btn-primary" name="update_profile" value="Update Profile">

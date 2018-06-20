@@ -75,6 +75,7 @@
           if (!$comment_query){
                 die("query failed " . mysqli_error($connection));
           }
+
           mail("hnryown@gmail.com", "Comment Approval Needed", "Comment approval needed at henrywowen.com", "From: me@henrywowen.com");
           
           $query = "UPDATE posts SET post_comment_count = post_comment_count + 1 WHERE post_id = $post_id";
@@ -140,11 +141,20 @@ if (isset($_SESSION['username'])){
                     $com_date = $row['comment_date'];
                     $com_content = $row['comment_content'];
                     $com_author = $row['comment_author'];
+                    $img_query = "SELECT user_image FROM users WHERE username = '{$com_author}'";
+                    $image_query = mysqli_query($connection, $img_query);
+                    $row = mysqli_fetch_assoc($image_query);
+                    $user_image = $row['user_image'];
+                    if ($user_image == ""){
+                        $user_image = "http://placehold.it/64x64";
+                    } else {
+                        $user_image = "user_images/" . $user_image;
+                    }
                 ?>
                 
                 <div class="media">
                     <a class="pull-left" href="#">
-                        <img class="media-object" src="http://placehold.it/64x64" alt="">
+                        <img class="media-object" style="width:64px" src="<?php echo $user_image;?>" alt="">
                     </a>
                     <div class="media-body">
                         <h4 class="media-heading"><?php echo $com_author; ?>
