@@ -23,7 +23,7 @@
                         echo "<li><a href='category.php?category=$catId'>{$catTitle}</a></li>";
                     }
                     ?>
-                    <li><a href='capstone_page.php'>Capstone</a></li>;
+                    <li><a href='capstone_page.php'>Capstone</a></li>
                     <?php
                     session_start();
                     if (isset($_SESSION['username'])){
