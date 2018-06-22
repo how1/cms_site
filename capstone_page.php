@@ -8,7 +8,7 @@ include "includes/navigation.php";
 ?>
 
 <?php
-include "webglbuild/capstone.html";
+include "web_gl_build/capstone.html";
 ?>
 
            
