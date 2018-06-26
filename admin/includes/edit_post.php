@@ -112,14 +112,14 @@ if (isset($_POST['update_post'])){
         <input value="<?php echo $post_author;?>" type="text" class="form-control" name="author">
     </div>
       
-    <div class="form-group" style="margin-bottom: 20px">
+    <div class="form-group">
         <select name="post_status" id="">
             <option value="<?php echo $post_status;?>"><?php echo $post_status ?></option>
           <?php
            if ($post_status == "draft") {
                echo "<option value='published'>published</option>";
            } else {
-               echo "value='draft'>draft</option>";
+               echo "<option value='draft'>draft</option>";
            }
             
         ?>
@@ -129,7 +129,7 @@ if (isset($_POST['update_post'])){
        
     <div class="form-group">
         <label for="post_image">Post Image</label>
-        <img width = '100' src="../images/<?php echo $post_image;?>" alt="">
+        <img style="margin: 5px" width = '100' src="../images/<?php echo $post_image;?>" alt="">
         <input type="file" name="image">
     </div>
        
