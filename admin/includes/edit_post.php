@@ -16,7 +16,7 @@ while($row = mysqli_fetch_assoc($select_posts_by_id)){
     $post_tags = escape( $row['post_tags']);
     $post_comment_count = escape( $row['post_comment_count']);
     $post_date = escape( $row['post_date']);
-    $post_content =escape( $row['post_content']);
+    $post_content = $row['post_content'];
 }
 
 if (isset($_POST['update_post'])){
@@ -30,7 +30,7 @@ if (isset($_POST['update_post'])){
     $image_temp =  escape($_FILES['image']['tmp_name']);
     
     $tags = escape($_POST['post_tags']);
-    $content = escape($_POST['post_content']);
+    $content = $_POST['post_content'];
     
     move_uploaded_file($image_temp, "../images/$image");
     
