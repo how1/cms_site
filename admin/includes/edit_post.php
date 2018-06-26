@@ -30,7 +30,7 @@ if (isset($_POST['update_post'])){
     $image_temp =  escape($_FILES['image']['tmp_name']);
     
     $tags = escape($_POST['post_tags']);
-    $content =  $_POST['post_content'];
+    $content = $_POST['post_content'];
     
     move_uploaded_file($image_temp, "../images/$image");
     
@@ -112,7 +112,7 @@ if (isset($_POST['update_post'])){
         <input value="<?php echo $post_author;?>" type="text" class="form-control" name="author">
     </div>
       
-    <div class="form-group">
+    <div class="form-group" style="margin-bottom: 20px">
         <select name="post_status" id="">
             <option value="<?php echo $post_status;?>"><?php echo $post_status ?></option>
           <?php
