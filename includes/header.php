@@ -16,6 +16,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+
     <!-- Custom CSS -->
     <link href="css/blog-home.css" rel="stylesheet">
 <!--    <link rel="icon" href="../images/favicon2.png" type="image/x-icon"/>-->

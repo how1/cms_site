@@ -5,7 +5,7 @@
    <?php include "includes/navigation.php";?>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container" id="postContainer">
 
         <div class="row">
 
@@ -49,7 +49,7 @@
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span> <?php echo $postDate;?></p>
                 <hr>
-                <img class="img-responsive" style="height: 100%" src="images/<?php echo $postImage;?> " alt="">
+                <img class="img-responsive" style="width: 80%" src="images/<?php echo $postImage;?> " alt="">
                 <hr>
                 <p><?php echo $postContent;?></p>
                

@@ -5,7 +5,7 @@
    <?php include "includes/navigation.php";?>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container" id="postContainer">
 
         <div class="row">
 
@@ -62,8 +62,7 @@
                 <p><span class="glyphicon glyphicon-time"></span> <?php echo $postDate;?></p>
                 <hr>
                 <a href="post.php?p_id=<?php echo $post_id; ?>">
-                <div>
-                <img class="img-responsive" style="height:100%" src="images/<?php echo $postImage;?> " alt=""></div></a>
+                <img class="img-responsive" style="width:70%;" src="images/<?php echo $postImage;?> " alt=""></a>
                 <hr>
                 <p><?php echo $postContent . " . . .";?></p>
                 <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id;?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
