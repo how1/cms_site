@@ -2,7 +2,7 @@
     <?php include "includes/db.php";?>
 
     <!-- Navigation -->
-0987   <?php include "includes/navigation.php";?>
+   <?php include "includes/navigation.php";?>
 
     <!-- Page Content -->
     <div class="container" id="postContainer">
