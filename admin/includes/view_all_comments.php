@@ -1,4 +1,17 @@
-                        <table class="table table-bordered table-hover">
+                        <style>
+table{
+/*    table-layout: fixed;*/
+    width: 100%;
+}
+
+th, td {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+/*    white-space: nowrap;*/
+}
+</style>
+                           <table class="table table-bordered table-hover">
                             
                             <thead>
                                 <tr>
@@ -22,7 +35,9 @@
 $query = "SELECT * FROM comments ";
 $select_posts = mysqli_query($connection, $query);
 
-
+if (mysqli_num_rows($select_posts) == 0){
+    echo "<h3>No comments to display</h3>";
+} else {
 while($row = mysqli_fetch_assoc($select_posts)){
     $com_id =  $row['comment_id'];
     $com_post_id =  $row['comment_post_id'];
@@ -31,13 +46,13 @@ while($row = mysqli_fetch_assoc($select_posts)){
     $com_content =  $row['comment_content'];
     $com_status =  $row['comment_status'];
     $com_date =  $row['comment_date'];
-    
-    echo "<tr>";
+
+    echo "<tr style='width:3px'>";
     echo "<td>$com_id</td>";
     echo "<td>$com_author</td>";
     echo "<td>$com_content</td>";
     
-    
+
 //     $query = "SELECT * FROM categories WHERE cat_id = {$post_cat_id} ";
 //     $select_categories_id = mysqli_query($connection, $query);
 //
@@ -74,7 +89,7 @@ while($row = mysqli_fetch_assoc($select_posts)){
                             </tbody>
                         </table>
                         
-                        
+  
 <?php
 
 if (isset($_GET['disapprove'])){
@@ -101,6 +116,6 @@ if (isset($_GET['delete'])){
     header("Location: comments.php");
 }
 
-
+}
 ?>
                         
