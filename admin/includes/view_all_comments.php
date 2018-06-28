@@ -1,6 +1,7 @@
-                        <style>
+
+<!--
+<style>
 table{
-/*    table-layout: fixed;*/
     width: 100%;
 }
 
@@ -8,8 +9,18 @@ th, td {
     max-width: 100px;
     overflow: hidden;
     text-overflow: ellipsis;
-/*    white-space: nowrap;*/
 }
+</style>
+-->
+<style>
+
+    #comContent{
+        max-width: 150px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    
 </style>
                            <table class="table table-bordered table-hover">
                             
@@ -50,7 +61,7 @@ while($row = mysqli_fetch_assoc($select_posts)){
     echo "<tr style='width:3px'>";
     echo "<td>$com_id</td>";
     echo "<td>$com_author</td>";
-    echo "<td>$com_content</td>";
+    echo "<td><div id='comContent'>$com_content</div></td>";
     
 
 //     $query = "SELECT * FROM categories WHERE cat_id = {$post_cat_id} ";
