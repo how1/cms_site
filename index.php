@@ -64,7 +64,10 @@
                 <a href="post.php?p_id=<?php echo $post_id; ?>">
                 <img class="img-responsive" style="width:70%;" src="images/<?php echo $postImage;?> " alt=""></a>
                 <hr>
-                <p><?php echo $postContent . " . . .";?></p>
+                <div>
+                <p><?php echo $postContent . " . . .";?>
+                </p>
+                </div>
                 <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id;?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                 <hr>       
