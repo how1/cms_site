@@ -61,7 +61,7 @@ if (isset($_POST['update_post'])){
     $update_post_query = mysqli_query($connection, $query);
     confirmQuery($update_post_query);
     echo "<h6>Your changes have been saved</h6>";
-    header("Location: posts.php?source=edit_post&p_id=6");
+    header("Location: posts.php?source=edit_post&p_id=$post_id");
 }
 ?>
    

@@ -9,7 +9,7 @@ if (isset($_POST['create_post'])){
     $image_temp =  escape($_FILES['image']['tmp_name']);
     
     $tags =  escape($_POST['post_tags']);
-    $content =  $_POST['post_content'];
+    $content =  escape($_POST['post_content']);
     $date = date('d-m-y');
 //    $post_comment_count = 4;
     
@@ -22,9 +22,11 @@ if (isset($_POST['create_post'])){
     
     $create_post_query = mysqli_query($connection, $query);
     confirmQuery($create_post_query);
-}
+    $message = "Your post has been submitted";
+} else {$message = '';}
 ?>
-   
+   <?php echo "<h5 style='color: red'>$message</h5>";?>
+
    <form action="" method="post" enctype="multipart/form-data">
     
     <div class="form-group">
@@ -81,7 +83,7 @@ if (isset($_POST['create_post'])){
         <label for=""></label>
         <input type="submit" class="btn btn-primary" name="create_post" value="Publish Post">
     </div>
-
+<?php echo "<h5 style='color:red'>$message</h5>";?>
     
     
     
