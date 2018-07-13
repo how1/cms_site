@@ -23,7 +23,12 @@
                         echo "<li><a href='category.php?category=$catId'>{$catTitle}</a></li>";
                     }
                     ?>
-                    <li><a href='capstone_page.php'>Capstone</a></li>
+                    <li>
+                    <a href='capstone_page.php' class="btn btn-danger navbar-btn" style="text-decoration: none; padding: 5px 10px 5px 10px; color: white; margin-left: 50px">Capstone</a></button>
+                    </li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
                     <?php
                     session_start();
                     if (isset($_SESSION['username'])){
@@ -49,10 +54,6 @@
                         echo "<li><a       href='registration.php'>Sign Up</a></li>";
                     }
                     ?>
-                    
-                   
-                   
-                
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
