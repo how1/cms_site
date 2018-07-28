@@ -24,7 +24,7 @@
                     }
                     ?>
                     <li>
-                    <a href='capstone_page.php' class="btn btn-danger navbar-btn" style="text-decoration: none; padding: 5px 10px 5px 10px; color: white; margin-left: 50px">Capstone</a></button>
+                    <a href='capstone_page.php' class="">Capstone</a></button>
                     </li>
 
                 </ul>

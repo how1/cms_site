@@ -14,14 +14,14 @@
 <h1 class="page-header">
                     All Posts
                 <small class='dropdown'>
-                    <a href='#' class='dropdown-toggle' data-toggle='dropdown'><i class='fa fa-user'></i> Sort By <b class='caret'></b></a>
+                    <a href='#' class='dropdown-toggle' data-toggle='dropdown'><i class='fas fa-list-ul'></i> Sort By <b class='caret'></b></a>
                     <ul class='dropdown-menu'>
                         <li>
-                            <a href='index.php?sort=newest'><i class='fa fa-fw fa-user'></i> Newest</a>
+                            <a href='index.php?sort=newest'><i class='far fa-calendar-plus'></i> Newest</a>
                         </li>
                         
                         <li>
-                            <a href='index.php?sort=oldest'><i class='fa fa-fw fa-power-off'></i> Oldest</a>
+                            <a href='index.php?sort=oldest'><i class='far fa-calendar-minus'></i> Oldest</a>
                         </li>
                     </ul>
                 </small>
