@@ -15,6 +15,7 @@ Database tables: blank field value type == varchar
 name: categories
 
 columns:	
+			
 			cat_id			    	primary key, ai
 			
 			cat_title
@@ -22,6 +23,7 @@ columns:
 name: comments
 
 columns: 	
+			
 			comment_id			primary key, ai
 
 			comment_post_id		int
@@ -39,6 +41,7 @@ columns:
 name: posts	
 
 columns:	
+			
 			post_id				primary key, ai
 
 			post_category_id	int
@@ -63,6 +66,7 @@ columns:
 name: users
 
 columns:	
+			
 			user_id				primary key, ai
 
 			username
