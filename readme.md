@@ -21,7 +21,8 @@ columns:
 			
 name: comments
 
-columns: 	comment_id			primary key, ai
+columns: 	
+			comment_id			primary key, ai
 
 			comment_post_id		int
 			
@@ -37,7 +38,8 @@ columns: 	comment_id			primary key, ai
 			
 name: posts	
 
-columns:	post_id				primary key, ai
+columns:	
+			post_id				primary key, ai
 
 			post_category_id	int
 
@@ -60,7 +62,8 @@ columns:	post_id				primary key, ai
 
 name: users
 
-columns:	user_id				primary key, ai
+columns:	
+			user_id				primary key, ai
 
 			username
 			
