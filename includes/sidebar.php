@@ -1,8 +1,8 @@
 <div id="sidebar" class="col-sm-4">
                
                 <!-- Blog Search Well -->
-                <div>
-                    <h4>Blog Search</h4>
+                <div class="side-bar-card">
+                    <h5>Blog Search</h5>
                     <form action="search.php" method="post">
                     <div class="input-group">
                         <input name="search" type="text" class="form-control">
@@ -18,8 +18,8 @@
                 </div>
 
                <!-- Login Form -->
-                <div>
-                    <h4>Login</h4>
+                <div class="side-bar-card">
+                    <h5>Login</h5>
                     <form action="includes/login.php" method="post">
                     <div class="form-group">
                         <input name="username" type="text" class="form-control" placeholder="Enter Username">
@@ -43,8 +43,8 @@
                     $select_categories_sidebar = mysqli_query($connection, $query);
                   
                 ?>
-                <div>
-                    <h4>Blog Categories</h4>
+                <div class="side-bar-card">
+                    <h5>Blog Categories</h5>
                     <div class="row">
                         <div class="col-lg-12">
                             <ul class="list-group">

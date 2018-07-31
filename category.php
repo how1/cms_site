@@ -28,7 +28,7 @@
                 echo "<h1 class='sort-menu'>
                     $cat_title";
                 ?>
-                <small class='dropdown'>
+                <small class='dropdown sort-dropdown'>
                     <a href='#' class='dropdown-toggle' data-toggle='dropdown'> Sort By</a>
                     <ul class='dropdown-menu'>
                         <div style="margin: 5px">

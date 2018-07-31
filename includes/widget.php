@@ -14,8 +14,9 @@
         text-shadow: 3px 3px 3px #ccc;
     }
 </style>
-                    <h4>Links</h4>
-                    <div id="widgets">
+                    
+                    <div class="side-bar-card"id="widgets">
+                        <h5>Links</h5>
                         <div style="display: inline-block">
                         <a id="sm-link" href="https://www.linkedin.com/in/henry-owen-87257887/" target=" "><span class="fab fa-linkedin"></span></a>
                         </div>

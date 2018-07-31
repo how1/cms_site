@@ -13,9 +13,8 @@
 <h1 class="sort-menu">
                     All Posts
                 <small class='dropdown'>
-                    <a href='#' class='dropdown-toggle' data-toggle='dropdown'> Sort By</a>
+                    <a href='#' class='dropdown-toggle sort-dropdown' data-toggle='dropdown'> Sort By</a>
                     <ul class='dropdown-menu'>
-                        <div style="margin: 5px">
                         <li class="dropdown-item">
                             <a href='index.php?sort=newest'><i class='far fa-calendar-plus'></i> Newest</a>
                         </li>
@@ -23,7 +22,6 @@
                         <li class="dropdown-item">
                             <a href='index.php?sort=oldest'><i class='far fa-calendar-minus'></i> Oldest</a>
                         </li>
-                        </div>
                     </ul>
                 </small>
                 </h1>
