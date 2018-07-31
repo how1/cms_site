@@ -13,5 +13,29 @@ footer {
 }
 
 #sidebar div {
-	margin: 5px;
+	margin: 5px 0px 5px 0px;
+}
+
+.icon-link {	
+	font-size: 48px; 
+}
+
+.icon-nav ul {
+	margin-right: 15px
+}
+
+.icon-nav a {
+	padding: 0 0 0 0;
+}
+
+.icon-nav span {
+	font-size: 48px;
+}
+
+.post-container a {
+	text-decoration: none;
+	color: primary;
+}
+.post-container img {
+	width: 100%;
 }

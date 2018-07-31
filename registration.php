@@ -57,9 +57,10 @@ if (isset($_POST['submit'])){
 <section id="login">
     <div class="container">
         <div class="row">
-            <div class="col-xs-6 col-xs-offset-3">
+            <div class="col-lg-5"></div>
+            <div class="col-xs-6">
                 <div class="form-wrap">
-                <h1>Register</h1>
+                <h1 class="text-center">Register</h1>
                    <h6 class="text-centered"><?php echo $message; ?></h6>
                     <form role="form" action="registration.php" method="post" id="login-form" autocomplete="off">
                         <div class="form-group">
@@ -80,6 +81,9 @@ if (isset($_POST['submit'])){
                  
                 </div>
             </div> <!-- /.col-xs-12 -->
+            
+            <div class="col-lg-3"></div>
+
         </div> <!-- /.row -->
     </div> <!-- /.container -->
 </section>

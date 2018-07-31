@@ -5,7 +5,7 @@
    <?php include "includes/navigation.php";?>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container post-container">
 
         <div class="row">
 
@@ -28,7 +28,7 @@
                     }
                     $count = mysqli_num_rows($search_query);
                     if ($count == 0){
-                        echo "<h1> NO RESULT</h1>";
+                        echo "<h1> No Results</h1>";
                     } else {
                
                
@@ -52,7 +52,7 @@
                 <p class="lead">
                     by <a href="index.php"><?php echo $postAuthor;?></a>
                 </p>
-                <p><span class="glyphicon glyphicon-time"></span> <?php echo $postDate;?></p>
+                <p><span class="far fa-clock"></span> <?php echo $postDate;?></p>
                 <hr>
                 <img class="img-responsive" src="images/<?php echo $postImage;?> " alt="">
                 <hr>

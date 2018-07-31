@@ -5,7 +5,7 @@
    <?php include "includes/navigation.php";?>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container post-container">
 
         <div class="row">
 
@@ -25,22 +25,25 @@
                 $cat_title_row = mysqli_fetch_assoc($get_title);
                 $cat_title = $cat_title_row['cat_title'];
                 
-                echo "<h1 class='page-header'>
+                echo "<h1 class='sort-menu'>
                     $cat_title";
                 ?>
                 <small class='dropdown'>
-                    <a href='#' class='dropdown-toggle' data-toggle='dropdown'><i class='fa fa-user'></i> Sort By <b class='caret'></b></a>
+                    <a href='#' class='dropdown-toggle' data-toggle='dropdown'> Sort By</a>
                     <ul class='dropdown-menu'>
-                        <li>
-                            <a href='category.php?sort=newest&category=<?php echo $post_cat;?>'><i class='fa fa-fw fa-user'></i> Newest</a>
+                        <div style="margin: 5px">
+                        <li class="dropdown-item">
+                            <a href='category.php?sort=newest&category=<?php echo $post_cat;?>'><i class='far fa-calendar-plus'></i> Newest</a>
                         </li>
                         
-                        <li>
-                            <a href='category.php?sort=oldest&category=<?php echo $post_cat;?>'><i class='fa fa-fw fa-power-off'></i> Oldest</a>
+                        <li class="dropdown-item">
+                            <a href='category.php?sort=oldest&category=<?php echo $post_cat;?>'><i class='far fa-calendar-minus'></i> Oldest</a>
                         </li>
+                        </div>
                     </ul>
                 </small>
                 </h1>
+                
                 <?php
                 if (isset($_GET['sort'])){
                     $sort = $_GET['sort'];

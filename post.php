@@ -5,7 +5,7 @@
    <?php include "includes/navigation.php";?>
 
     <!-- Page Content -->
-    <div class="container" id="postContainer">
+    <div class="container" id="post-container">
 
         <div class="row">
 

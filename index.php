@@ -5,24 +5,25 @@
    <?php include "includes/navigation.php";?>
 
     <!-- Page Content -->
-    <div class="container" id="postContainer">
-
+    <div class="container post-container">
         <div class="row">
 
             <!-- Blog Entries Column -->
-            <div class="col-md-8">
-<h1 class="page-header">
+            <div class="col-sm-8">
+<h1 class="sort-menu">
                     All Posts
                 <small class='dropdown'>
-                    <a href='#' class='dropdown-toggle' data-toggle='dropdown'><i class='fas fa-list-ul'></i> Sort By <b class='caret'></b></a>
+                    <a href='#' class='dropdown-toggle' data-toggle='dropdown'> Sort By</a>
                     <ul class='dropdown-menu'>
-                        <li>
+                        <div style="margin: 5px">
+                        <li class="dropdown-item">
                             <a href='index.php?sort=newest'><i class='far fa-calendar-plus'></i> Newest</a>
                         </li>
                         
-                        <li>
+                        <li class="dropdown-item">
                             <a href='index.php?sort=oldest'><i class='far fa-calendar-minus'></i> Oldest</a>
                         </li>
+                        </div>
                     </ul>
                 </small>
                 </h1>
@@ -59,7 +60,7 @@
                 <p class="lead">
                     by <a href="index.php"><?php echo $postAuthor;?></a>
                 </p>
-                <p><span class="glyphicon glyphicon-time"></span> <?php echo $postDate;?></p>
+                <p><span class="far fa-clock"></span> <?php echo $postDate;?></p>
                 <hr>
                 <a href="post.php?p_id=<?php echo $post_id; ?>">
                 <img class="img-responsive" style="width:70%;" src="images/<?php echo $postImage;?> " alt=""></a>
@@ -68,7 +69,7 @@
                 <p><?php echo $postContent . " . . .";?>
                 </p>
                 </div>
-                <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id;?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id;?>">Read More  <span class="fas fa-chevron-right"></span></a>
 
                 <hr>       
               
