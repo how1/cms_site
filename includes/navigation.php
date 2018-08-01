@@ -30,7 +30,7 @@
         </div>
       </li>
                     <li>
-                    <a class="nav-link" href='capstone_page.php' class="">Capstone</a></button>
+                    <a class="nav-link" href='capstone_page.php' class="">Capstone Demo</a></button>
                     </li>
                     
                 </ul>

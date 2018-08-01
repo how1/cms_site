@@ -5,7 +5,7 @@ Use a LAMP server or xampp
 On a LAMP server:
 1. Place root directory in, or clone git repo to /var/www/html
 2. Set up database tables in mySql
-3. In mysql turn off strict mode using: SET sql_mode = '';
+3. In mySql, turn off strict mode using: SET sql_mode = '';
 
 With xampp:
 1. Place root directory in, or clone git repo to /xampp/htdocs/
