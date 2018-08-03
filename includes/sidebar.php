@@ -53,7 +53,7 @@
                                 
     while($row = mysqli_fetch_assoc(
         $select_categories_sidebar)){
-        $quantity_query = "SELECT * FROM posts WHERE post_category_id={$row['cat_id']}";
+        $quantity_query = "SELECT * FROM posts WHERE post_category_id={$row['cat_id']} AND post_status = 'published' ";
         $send = mysqli_query($connection, $quantity_query);
         $numPosts = mysqli_num_rows($send);
         $catTitle =  $row['cat_title'];
