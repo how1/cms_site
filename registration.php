@@ -1,7 +1,7 @@
-<?php  include "includes/db.php"; ?>
- <?php  include "includes/header.php"; ?>
+<?php  //include "includes/db.php"; ?>
+ <?php  //include "includes/header.php"; ?>
 <?php
-
+/*
 if (isset($_POST['submit'])){
     
     $username = $_POST['username'];
@@ -43,16 +43,16 @@ if (isset($_POST['submit'])){
     }
     
 } else {$message = '';}
-
+*/
 ?>
 
     <!-- Navigation -->
     
-    <?php  include "includes/navigation.php"; ?>
+    <?php  //include "includes/navigation.php"; ?>
     
- 
+ Registration not supported at this time
     <!-- Page Content -->
-    <div class="container">
+   <!--  <div class="container">
     
 <section id="login">
     <div class="container">
@@ -82,15 +82,14 @@ if (isset($_POST['submit'])){
                 </div>
             </div> <!-- /.col-xs-12 -->
             
-            <div class="col-lg-3"></div>
+            <!-- <div class="col-lg-3"></div> -->
 
-        </div> <!-- /.row -->
-    </div> <!-- /.container -->
-</section>
-
-
-        <hr>
+        <!-- </div> /.row -->
+    <!-- </div> /.container -->
+<!-- </section> -->
 
 
+        <!-- <hr> -->
 
-<?php include "includes/footer.php";?>
+
+<?php //include "includes/footer.php";?>

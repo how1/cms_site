@@ -61,7 +61,7 @@
                 </li>";
                     
                     } else { 
-                        echo "<li><a class='nav-link' href='registration.php'>Sign Up</a></li>";
+                      //  echo "<li><a class='nav-link' href='registration.php'>Sign Up</a></li>";
                     }
                     ?>
                 </ul>
