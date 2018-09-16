@@ -6,7 +6,7 @@ include "includes/header.php";
 include "includes/navigation.php";
 
 ?>
-<div style="padding-top: 70px">
+<div>
 <?php
 include "web_gl_build/capstone.html";
 ?>
