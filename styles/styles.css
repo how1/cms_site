@@ -72,3 +72,16 @@ footer {
 
 .dropdown-item {
 }
+
+.article-title {
+    /*font-family: "Times New Roman", Times, serif;*/
+    text-decoration: none;
+}
+
+.capstone-page {
+    margin: 700px 150px 150px; 
+    font-family: 'Helvetica';
+    font-size: 24px;
+
+}
+

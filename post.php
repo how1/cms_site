@@ -41,7 +41,7 @@
                    
 
                 <!-- First Blog Post -->
-                <h2>
+                <h2 class="article-title">
                     <a href="#"><?php echo $postTitle;?></a>
                 </h2>
                 <p class="lead">
