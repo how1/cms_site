@@ -30,6 +30,7 @@
     <title id='page_title'><?php echo $postTitle; ?></title>
 
     <meta property='og:title' content=<?php echo $page_title ?>/>
+    <meta property="og:type" content="website" />
     <meta property='og:image:width:600'/>
     <meta property='og:image:height:400'/>
     <meta property='og:image' content='http://henrywowen.com/images/'<?php echo $postImage ?>/>
