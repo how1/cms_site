@@ -54,7 +54,7 @@
                 <p><?php echo $postContent;?></p>
                 <?php 
                     if ($post_id == 5) 
-                        echo "<div>
+                        echo "<div width='98%'>
                                 <iframe src='/autonomous_vehicle_briefing.pdf' width='98%' height='1000px'>
                             </div>";
                 ?>
