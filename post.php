@@ -1,5 +1,49 @@
-<?php include "includes/header.php";?>
-    <?php include "includes/db.php";?>
+<!DOCTYPE html>
+<html lang="en">
+
+
+<?php include "includes/db.php";?>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <?php 
+                
+        if (isset($_GET['p_id'])){
+            $post_id = $_GET['p_id'];
+        }
+        
+       
+        $query = "SELECT * FROM posts WHERE post_id = $post_id ";
+        $select_all_posts_query = mysqli_query($connection, $query);
+        
+        while($row =   mysqli_fetch_assoc($select_all_posts_query)){
+        $postTitle = $row['post_title'];
+        $page_title = $postTitle;
+        $postAuthor = $row['post_author'];
+        $postDate = $row['post_date'];
+        $postImage = $row['post_image'];
+        $postContent = $row['post_content'];
+             ?>
+    <title id='page_title'><?php echo $postTitle; ?></title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+
+    <!-- Custom CSS -->
+    <link href="styles/styles.css" rel="stylesheet">
+
+     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+    <link rel="shortcut icon" href="../images/blank_favicon.png" type="image/x-icon"/>
+</head>
+
+<body>
 
     <!-- Navigation -->
    <?php include "includes/navigation.php";?>
@@ -29,13 +73,13 @@
                 
                 while($row =   mysqli_fetch_assoc($select_all_posts_query)){
                 $postTitle = $row['post_title'];
-
+                $page_title = $postTitle;
                 $postAuthor = $row['post_author'];
                 $postDate = $row['post_date'];
                 $postImage = $row['post_image'];
                 $postContent = $row['post_content'];
                      ?>
-                         
+
                          
                          
                    
@@ -63,7 +107,7 @@
               <!-- keep dont delete bracket-->
              <?php   }?>
              <!-- keep bracket -->
-
+        
            
            
                 <!-- Blog Comments -->
