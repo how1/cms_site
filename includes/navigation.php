@@ -32,6 +32,9 @@
                     <li>
                     <a class="nav-link" href='capstone_page.php' class="">Capstone Demo</a></button>
                     </li>
+                    <li>
+                    <a class="nav-link" href='about.php' class="">About</a></button>
+                    </li>
                     
                 </ul>
                 <ul class="navbar-nav icon-nav">
