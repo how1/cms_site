@@ -30,10 +30,10 @@
         </div>
       </li>
                     <li>
-                    <a class="nav-link" href='https://threejswebsim.henrywowen.com'>Particle Physics Simulator</a></button>
+                    <a class="nav-link" href='http://threejswebsim.henrywowen.com'>Particle Physics Simulator</a></button>
                     </li>
                     <li>
-                    <a class="nav-link" href='https://chopperassault.henrywowen.com' class="">Chopper Assault</a></button>
+                    <a class="nav-link" href='http://chopperassault.henrywowen.com' class="">Chopper Assault</a></button>
                     </li>
                     
                 </ul>
