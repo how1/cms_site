@@ -30,9 +30,9 @@
     <title id='page_title'><?php echo $postTitle; ?></title>
 
     <meta property='og:title' content=<?php echo $page_title ?>/>
-    <meta property='og:image' content=<?php echo $postImage ?>/>
+    <meta property='og:image' content='http://henrywowen.com/images/'<?php echo $postImage ?>/>
     <meta property='og:description' content='Henry on henrywowen.com'/>
-    <meta property='og:url' content='//henrywowen.com/post.php?p_id=5' />
+    <meta property='og:url' content='http://henrywowen.com/post.php?p_id=5' />
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
