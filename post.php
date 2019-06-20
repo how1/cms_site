@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <?php include "db.php";?>
+    <?php include "includes/db.php";?>
     <?php 
                 
         if (isset($_GET['p_id'])){
@@ -25,7 +25,7 @@
         $postAuthor = $row['post_author'];
         $postDate = $row['post_date'];
         $postImage = $row['post_image'];
-        $postContent = $row['post_content'];
+        $postContent = $row['post_content'];}
              ?>
     <title id='page_title'><?php echo $postTitle; ?></title>
     
@@ -34,7 +34,7 @@
 
 
     <!-- Custom CSS -->
-    <link href="../styles/styles.css" rel="stylesheet">
+    <link href="styles/styles.css" rel="stylesheet">
 
      <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
@@ -59,8 +59,8 @@
                     <small>Secondary Text</small>
                 </h1>
 -->
-               <?php 
-                
+              <?php 
+        
                 if (isset($_GET['p_id'])){
                     $post_id = $_GET['p_id'];
                 }
