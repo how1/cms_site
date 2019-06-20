@@ -30,10 +30,10 @@
         </div>
       </li>
                     <li>
-                    <a class="nav-link" href='capstone_page.php' class="">Capstone Demo</a></button>
+                    <a class="nav-link" href='threejswebsim.henrywowen.com' class="">Particle Physics Simulator</a></button>
                     </li>
                     <li>
-                    <a class="nav-link" href='about.php' class="">About</a></button>
+                    <a class="nav-link" href='Chopper Assault' class="">Chopper Assault</a></button>
                     </li>
                     
                 </ul>
