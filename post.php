@@ -54,9 +54,9 @@
                 <p><?php echo $postContent;?></p>
                 <?php 
                     if ($post_id == 5) 
-                        echo "<div>
-                                <iframe src='/autonomous_vehicle_briefing.pdf' width='98%' height='1000px'>
-                            </div>";
+                        echo "<object width='100%' height='1000px' type='application/pdf' data='/autonomous_vehicle_briefing.pdf?#zoom=85&scrollbar=0&toolbar=0&navpanes=0'>
+                             <p>PDF cannot be displayed.</p>
+                            </object>";
                 ?>
                
                 <hr>       
