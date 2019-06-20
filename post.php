@@ -52,7 +52,7 @@
                 <img class="img-responsive" style="width: 80%" src="images/<?php echo $postImage;?> " alt="">
                 <hr>
                 <p><?php echo $postContent;?></p>
-                <?php if ($post_id == 5) echo "<iframe src='/autonomous_vehicle_briefing.pdf' width='100%'' height='500px'>"?>
+                <?php if ($post_id == 5) echo "<iframe src='/autonomous_vehicle_briefing.pdf' width='98%' height='500px'>"?>
                
 
                 <hr>       
