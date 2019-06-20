@@ -33,8 +33,9 @@
     <meta property="og:type" content="website" />
     <meta property='og:image:width:600'/>
     <meta property='og:image:height:400'/>
-    <meta property='og:image' content='http://henrywowen.com/images/'<?php echo $postImage ?>/>
+    <meta property='og:image' content='http://henrywowen.com/images/<?php echo $postImage ?>'/>
     <meta property='og:description' content='Henry on henrywowen.com'/>
+    <meta property='og:author' content='Henry Owen'/>
     <meta property='og:url' content='http://henrywowen.com/post.php?p_id=5' />
 
     
