@@ -28,13 +28,15 @@
                     }
                     ?>
         </div>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Web Apps
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">   
+            <a class='dropdown-item' href='http://threejswebsim.henrywowen.com'>Particle Physics Simulator</a>
+            <a class='dropdown-item' href='http://chopperassault.henrywowen.com'>Chopper Assault</a>
+
+        </div>
       </li>
-                    <li>
-                    <a class="nav-link" href='http://threejswebsim.henrywowen.com'>Particle Physics Simulator</a></button>
-                    </li>
-                    <li>
-                    <a class="nav-link" href='http://chopperassault.henrywowen.com' class="">Chopper Assault</a></button>
-                    </li>
                     
                 </ul>
                 <ul class="navbar-nav icon-nav">
