@@ -19,7 +19,7 @@
                     echo "<h1 class='page-header'>
                     Results for \"$result\"</h1>";
                         
-                    $query = "SELECT * FROM posts WHERE post_tags LIKE '%$result%' ";
+                    $query = "SELECT * FROM posts WHERE post_tags LIKE '%$result%' OR post_title LIKE '%$result%' ";
                     
                     $search_query = mysqli_query($connection, $query);
                     
