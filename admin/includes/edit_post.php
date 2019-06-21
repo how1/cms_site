@@ -48,7 +48,7 @@ if (isset($_POST['update_post'])){
     $query = "UPDATE posts SET ";
     $query .= "post_title = '{$title}', ";
     $query .= "post_category_id = '{$category}', ";
-    $query .= "post_date = now(), ";
+    $query .= "post_date = '{$post_date}', ";
     $query .= "post_author = '{$author}', ";
     $query .= "post_status = '{$status}', ";
     $query .= "post_tags = '{$tags}', ";
