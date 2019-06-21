@@ -148,7 +148,6 @@
                         // Take action based on the score returned:
                         if ($recaptcha->score >= 0.5) {
                             $user_not_bot = true;
-                            echo "not bot";
                         } else {
                             // Not verified - show form error
                         }
