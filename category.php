@@ -78,9 +78,9 @@
                 <p><span class="glyphicon glyphicon-time"></span> <?php echo $postDate;?></p>
                 <hr>
                 <a href="post.php?p_id=<?php echo $post_id; ?>">
-                <img class="img-responsive" src="images/<?php echo $postImage;?> " alt=""></a>
+                <img class="img-responsive" style="width:30%;" src="images/<?php echo $postImage;?> " alt=""></a>
                 <hr>
-                <p><?php echo filter_var($postContent, FILTER_SANITIZE_STRING);?></p>
+                <p><?php echo filter_var($postContent, FILTER_SANITIZE_STRING) . " . . . ";?></p>
                 <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id;?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                 <hr>       

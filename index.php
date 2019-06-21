@@ -61,7 +61,7 @@
                 <p><span class="far fa-clock"></span> <?php echo $postDate;?></p>
                 <hr>
                 <a href="post.php?p_id=<?php echo $post_id; ?>">
-                <img class="img-responsive" style="width:30%;" src="images/<?php echo $postImage;?> " alt=""></a>
+                <img class="img-responsive" style="width:30%" src="images/<?php echo $postImage;?> " alt=""></a>
                 <hr>
                 <div>
                 <p><?php echo filter_var($postContent, FILTER_SANITIZE_STRING) . " . . .";?>

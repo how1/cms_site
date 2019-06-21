@@ -10,8 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <?php $page_title = 'Blog Home' ?>
+    <title id='page_title'><?php echo $page_title; ?></title>
 
-    <title>Blog Home</title>
+    <meta property='og:title' content="<?php echo $page_title ?>"/>
+    <meta property="og:type" content="website" />
+    <meta property='og:description' content='Blog Home on henrywowen.com'/>
+    <meta property='og:url' content='http://henrywowen.com'/>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">

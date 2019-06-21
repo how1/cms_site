@@ -38,7 +38,7 @@
                 $postAuthor = $row['post_author'];
                 $postDate = $row['post_date'];
                 $postImage = $row['post_image'];
-                $postContent = $row['post_content'];
+                $postContent = substr($row['post_content'],0,100);
                      ?>
                          
                          
@@ -54,9 +54,9 @@
                 </p>
                 <p><span class="far fa-clock"></span> <?php echo $postDate;?></p>
                 <hr>
-                <img class="img-responsive" src="images/<?php echo $postImage;?> " alt="">
+                <img class="img-responsive" style="width:30%;" src="images/<?php echo $postImage;?> " alt="">
                 <hr>
-                <p><?php echo $postContent;?></p>
+                <p><?php echo filter_var($postContent, FILTER_SANITIZE_STRING) . " . . . ";?></p>
                 <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                 <hr>       
