@@ -64,12 +64,41 @@
                 <img class="img-responsive" style="width:30%;" src="images/<?php echo $postImage;?> " alt=""></a>
                 <hr>
                 <div>
-                <p><?php echo $postContent . " . . .";?>
+                <p><?php echo filter_var($postContent, FILTER_SANITIZE_STRING) . " . . .";?>
                 </p>
                 </div>
                 <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id;?>">Read More  <span class="fas fa-chevron-right"></span></a>
 
-                <hr>       
+                <hr>  
+
+                <!-- <hr>
+                <div class="post-grid-container">
+                    <div class="post-item2">
+                        <a href="post.php?p_id=<?php //echo $post_id; ?>">
+                        <img class="img-responsive" id="post-pic" src="images/<?php //echo $postImage;?> " alt="post picture"></a>
+                    </div>
+                    <div class="post-item1">
+                        <h2 class="article-title">
+                             <a href="post.php?p_id=<?php //echo $post_id;?> "><?php //echo $postTitle;?></a>
+                        </h2>
+
+                    </div>
+
+                    <div class="post-item5">
+                        <p class="lead">
+                            by <a href="index.php"><?php //echo $postAuthor;?></a>
+                        </p>
+                        <br>
+                        <p><span class="far fa-clock"></span> <?php //echo $postDate;?></p>
+                    </div>
+                    <div class="post-item3">
+                        <p id="post-content"><?php //echo filter_var($postContent, FILTER_SANITIZE_STRING) . " . . .";?>
+                            </p>
+                    </div>
+                    <div class="post-item4">
+                        <a class="btn btn-primary" href="post.php?p_id=<?php //echo $post_id;?>">Read More  <span class="fas fa-chevron-right"></span></a>
+                    </div>
+                </div>   -->  
               
              <?php }} if ($post_count == 0){ echo "<h1>No Posts Published Yet";}?>
 

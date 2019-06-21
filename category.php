@@ -65,7 +65,7 @@
                 $postAuthor = $row['post_author'];
                 $postDate = $row['post_date'];
                 $postImage = $row['post_image'];
-                $postContent = $row['post_content'];
+                $postContent = substr($row['post_content'],0,100);
                      ?>
 
                 <!-- First Blog Post -->
@@ -80,7 +80,7 @@
                 <a href="post.php?p_id=<?php echo $post_id; ?>">
                 <img class="img-responsive" src="images/<?php echo $postImage;?> " alt=""></a>
                 <hr>
-                <p><?php echo $postContent;?></p>
+                <p><?php echo filter_var($postContent, FILTER_SANITIZE_STRING);?></p>
                 <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id;?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                 <hr>       
