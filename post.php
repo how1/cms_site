@@ -35,8 +35,18 @@
     <meta property='og:image:height:400'/>
     <meta property='og:image' content='http://henrywowen.com/images/<?php echo $postImage ?>'/>
     <meta property='og:description' content='Henry on henrywowen.com'/>
-    <meta property='og:author' content='Henry Owen'/>
     <meta property='og:url' content='http://henrywowen.com/post.php?p_id=5' />
+
+    <?php include "recaptcha.php"; ?>
+    <script src="https://www.google.com/recaptcha/api.js?render=<?php echo $site_key;?>"></script>
+    <script>
+    grecaptcha.ready(function () {
+        grecaptcha.execute( '<?php echo $site_key;?>' , { action: 'contact' }).then(function (token) {
+            var recaptchaResponse = document.getElementById('recaptchaResponse');
+            recaptchaResponse.value = token;
+        });
+    });
+    </script>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -119,9 +129,34 @@
            
            
                 <!-- Blog Comments -->
+
+                <?php // Check if form was submitted:
+                
+                include "recaptcha.php";
+                $user_not_bot = false;
+                    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recaptcha_response'])) {
+
+                        // Build POST request:
+                        $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
+                        $recaptcha_secret = $secret_key;
+                        $recaptcha_response = $_POST['recaptcha_response'];
+
+                        // Make and decode POST request:
+                        $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
+                        $recaptcha = json_decode($recaptcha);
+
+                        // Take action based on the score returned:
+                        if ($recaptcha->score >= 0.5) {
+                            $user_not_bot = true;
+                            echo "not bot";
+                        } else {
+                            // Not verified - show form error
+                        }
+
+                    } ?>
 <?php 
                 
-      if (isset($_POST['create_comment'])){
+      if (isset($_POST['create_comment']) &&  $user_not_bot){
           $post_id = $_GET['p_id'];
           $com_author = $_POST['comment_author'];
           $com_email = $_POST['comment_email'];
@@ -178,6 +213,7 @@ if (isset($_SESSION['username'])){
                             <textarea class="form-control" name="comment_content" rows="3"></textarea>
                         </div>
                         <button type="submit" name="create_comment" class="btn btn-primary">Submit</button>
+                        <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                     </form>
                 </div>
 
