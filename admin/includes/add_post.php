@@ -6,7 +6,7 @@ if (isset($_POST['create_post'])){
     $status =  escape($_POST['post_status']);
     
     $image =  escape($_FILES['image']['name']);
-    $image_temp =  escape($_FILES['image']['tmp_name']);
+    $image_temp = $_FILES['image']['tmp_name'];
     
     $tags =  escape($_POST['post_tags']);
     $content = $_POST['post_content'];
