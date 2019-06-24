@@ -7,15 +7,20 @@ if (isset($_POST['create_post'])){
     
     $image =  escape($_FILES['image']['name']);
     $image_temp = $_FILES['image']['tmp_name'];
+    $image_error = $_FILES['image']['error'];
     
     $tags =  escape($_POST['post_tags']);
     $content = $_POST['post_content'];
     $date = date('d-m-y');
 //    $post_comment_count = 4;
     
-    
-    move_uploaded_file($image_temp, "../images/" . $image);
-    
+    if ($image_error === 0){
+        move_uploaded_file($image_temp, "../images/" . $image);
+    } else {
+        $content = "upload failed: " . $image_error;  
+    }
+
+
     
     $query = "INSERT INTO posts(post_title,post_category_id, post_author, post_date, post_image, post_content,post_tags,post_status ) ";
     $query.= "VALUES('{$title}',{$category},'{$author}',now(),'{$image}', '{$content}', '{$tags}','{$status}') ";
