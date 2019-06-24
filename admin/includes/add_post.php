@@ -14,7 +14,7 @@ if (isset($_POST['create_post'])){
 //    $post_comment_count = 4;
     
     
-    move_uploaded_file($image_temp, "../images/$image");
+    move_uploaded_file($image_temp, "../images/" . $image);
     
     
     $query = "INSERT INTO posts(post_title,post_category_id, post_author, post_date, post_image, post_content,post_tags,post_status ) ";
