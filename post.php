@@ -96,6 +96,7 @@
                 $postDate = $row['post_date'];
                 $postImage = $row['post_image'];
                 $postContent = $row['post_content'];
+                $postCategory = $row['post_category_id'];
                      ?>
 
                          
@@ -153,6 +154,47 @@
                         }
 
                     } ?>
+
+<!-- Related reads -->
+<div>
+    <h3>Related Articles</h3>
+    <?php 
+    $query = "SELECT * FROM posts WHERE post_category_id = $postCategory AND post_status = 'published' ORDER BY post_date DESC";
+    $select_all_posts_query = mysqli_query($connection, $query);
+    if (!$select_all_posts_query){
+    die("Query failed: " . mysqli_error($connection));
+    }
+    while($row =   mysqli_fetch_assoc($select_all_posts_query)){
+    $r_postTitle = $row['post_title'];
+    $r_post_id = $row['post_id'];
+    $r_postAuthor = $row['post_author'];
+    $r_postDate = $row['post_date'];
+    $r_postImage = $row['post_image'];
+    $r_postContent = substr($row['post_content'],0,20);
+    if ($r_post_id != $post_id){
+    ?>
+
+    <!-- Related Blog Post -->
+    <ul class="related-posts-list">
+        <li style="float: left; margin-right: 1rem">
+            <a href="post.php?p_id=<?php echo $r_post_id; ?>">
+            <img class="post-preview-img" src="images/<?php echo $r_postImage;?> " alt=""></a>
+        </li>
+        <li>
+            <h4 class="article-title">
+            <a href="post.php?p_id=<?php echo $r_post_id;?> "><?php echo $r_postTitle;?></a>
+            </h4>
+            <p style="display:inline-block"><?php echo filter_var($r_postContent, FILTER_SANITIZE_STRING) . " . . . ";?></p>
+            <a style="display:inline-block" class="btn btn-primary" href="post.php?p_id=<?php echo $r_post_id;?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+        </li>
+    </ul>
+    <hr> 
+
+    <?php }} ?>
+
+</div>
+
+
 <?php 
                 
       if (isset($_POST['create_comment']) &&  $user_not_bot){
@@ -167,8 +209,8 @@
           if (!$comment_query){
                 die("query failed " . mysqli_error($connection));
           }
-
-          mail("hnryown@gmail.com", "Comment Approval Needed", "Comment approval needed at henrywowen.com", "From: me@henrywowen.com");
+          $msg = "Comment approval needed at henrywowen.com";
+          mail("hnryown@gmail.com", "Comment Approval Needed", $msg, "From: me@henrywowen.com");
           
           $query = "UPDATE posts SET post_comment_count = post_comment_count + 1 WHERE post_id = $post_id";
           $increment_com_count = mysqli_query($connection, $query);
